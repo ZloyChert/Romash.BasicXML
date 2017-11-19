@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTester", "ConsoleTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryXML", "LibraryXML\LibraryXML.csproj", "{907DC0E4-706E-4F61-98BE-E06DA7EB856B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryXML.Tests", "LibraryXML.Tests\LibraryXML.Tests.csproj", "{18C87E66-B542-435A-AF42-3D81A2F6FA7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{907DC0E4-706E-4F61-98BE-E06DA7EB856B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{907DC0E4-706E-4F61-98BE-E06DA7EB856B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{907DC0E4-706E-4F61-98BE-E06DA7EB856B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18C87E66-B542-435A-AF42-3D81A2F6FA7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18C87E66-B542-435A-AF42-3D81A2F6FA7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18C87E66-B542-435A-AF42-3D81A2F6FA7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18C87E66-B542-435A-AF42-3D81A2F6FA7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

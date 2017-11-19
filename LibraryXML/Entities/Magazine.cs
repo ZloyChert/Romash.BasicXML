@@ -9,7 +9,7 @@ namespace LibraryXML.Entities
 {
     [Serializable]
     [XmlRoot(ElementName = "Magazine")]
-    public class Magazine : IPaperEdition
+    public class Magazine : IPaperEdition, IEquatable<Magazine>
     {
         [XmlAttribute("Name")]
         public string Name { get; set; }
@@ -29,5 +29,23 @@ namespace LibraryXML.Entities
         public DateTimeOffset Date { get; set; }
         [XmlAttribute("Issn")]
         public string Issn { get; set; }
+
+        public bool Equals(Magazine other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return string.Equals(Name, other.Name) && string.Equals(CreatedPlace, other.CreatedPlace) 
+                && string.Equals(EditionName, other.EditionName) && Year == other.Year 
+                && PageNumber == other.PageNumber && string.Equals(AdditionalInfo, other.AdditionalInfo) 
+                && Number == other.Number && Date.Equals(other.Date) && string.Equals(Issn, other.Issn);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Magazine) obj);
+        }
     }
 }

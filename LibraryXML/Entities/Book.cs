@@ -5,7 +5,7 @@ namespace LibraryXML.Entities
 {
     [Serializable]
     [XmlRoot(ElementName = "Book")]
-    public class Book : IPaperEdition
+    public class Book : IPaperEdition, IEquatable<Book>
     {
         [XmlAttribute("Name")]
         public string Name { get; set; }
@@ -23,5 +23,23 @@ namespace LibraryXML.Entities
         public string AdditionalInfo { get; set; }
         [XmlAttribute("Isbn")]
         public string Isbn { get; set; }
+
+        public bool Equals(Book other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return string.Equals(Name, other.Name) && string.Equals(Author, other.Author) 
+                && string.Equals(CreatedPlace, other.CreatedPlace) && string.Equals(EditionName, other.EditionName) 
+                && Year == other.Year && PageNumber == other.PageNumber 
+                && string.Equals(AdditionalInfo, other.AdditionalInfo) && string.Equals(Isbn, other.Isbn);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Book) obj);
+        }
     }
 }
