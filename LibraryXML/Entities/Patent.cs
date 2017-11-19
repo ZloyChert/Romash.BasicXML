@@ -15,9 +15,9 @@ namespace LibraryXML.Entities
         public string Country { get; set; }
         [XmlAttribute("RegisterNumber")]
         public int RegisterNumber { get; set; }
-        [XmlAttribute(AttributeName = "RequestDate")]
+        [XmlAttribute("RequestDate")]
         public DateTimeOffset RequestDate { get; set; }
-        [XmlAttribute(AttributeName = "PublicationDate")]
+        [XmlAttribute("PublicationDate")]
         public DateTimeOffset PublicationDate { get; set; }
         [XmlAttribute("PageNumber")]
         public int PageNumber { get; set; }

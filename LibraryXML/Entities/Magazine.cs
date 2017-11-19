@@ -25,7 +25,7 @@ namespace LibraryXML.Entities
         public string AdditionalInfo { get; set; }
         [XmlAttribute("Number")]
         public int Number { get; set; }
-        [XmlAttribute(AttributeName = "Date")]
+        [XmlAttribute("Date")]
         public DateTimeOffset Date { get; set; }
         [XmlAttribute("Issn")]
         public string Issn { get; set; }

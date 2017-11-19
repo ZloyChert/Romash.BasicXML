@@ -8,6 +8,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using LibraryXML;
+using LibraryXML.ElementReaders;
+using LibraryXML.ElementWriters;
 using LibraryXML.Entities;
 
 namespace ConsoleTester
@@ -54,10 +56,21 @@ namespace ConsoleTester
             };
             List<IPaperEdition> list = new List<IPaperEdition>{b, m, p};
 
-            XmlEnumeration xml = new XmlEnumeration("library.xml");
+            var fac = new PaperEditionFactory();
+            fac.AddInitializer(BookReader.ReadBook, "Book");
+            fac.AddInitializer(PatentReader.ReadPatent, "Patent");
+            fac.AddInitializer(MagazineReader.ReadMagazine , "Magazine");
+
+            XmlElementWriter wr = new XmlElementWriter();
+            wr.AddWriter(typeof(Book), BookWriter.WriteBook);
+            wr.AddWriter(typeof(Magazine), MagazineWriter.WriteMagazine);
+            wr.AddWriter(typeof(Patent), PatentWriter.WritePatent);
+
+            XmlEnumeration xml = new XmlEnumeration("library.xml", fac, wr);
             xml.WriteToFile(list);
             var a = xml.ReadFromFile().ToList();
             Console.Read();
+
         }
     }
 }

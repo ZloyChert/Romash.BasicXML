@@ -40,12 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElementReaders\BookReader.cs" />
+    <Compile Include="ElementReaders\MagazineReader.cs" />
+    <Compile Include="ElementReaders\PatentReader.cs" />
+    <Compile Include="ElementWriters\BookWriter.cs" />
+    <Compile Include="ElementWriters\MagazineWriter.cs" />
+    <Compile Include="ElementWriters\PatentWriter.cs" />
     <Compile Include="Entities\Book.cs" />
     <Compile Include="Entities\Magazine.cs" />
     <Compile Include="Entities\PaperEdition.cs" />
     <Compile Include="Entities\Patent.cs" />
+    <Compile Include="PaperEditionFactory.cs" />
+    <Compile Include="XmlElementWriter.cs" />
     <Compile Include="XMLEnumeration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
